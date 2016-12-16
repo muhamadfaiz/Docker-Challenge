@@ -109,4 +109,15 @@ Demonstrate basic understanding of Docker containers and images
   # docker restart ghost_blog
   ```
 
+##Acceptance Criteria
+
+*	Candidate must be able to demonstrate the running containers.
+*	There should be at least 2 running containers; Ghost blogging platform and MySQL database container (Tip: Use readily available official images from Docker Hub)
+
+![img](http://i.imgur.com/wEGL6MV.png)
+
+●	If the container is destroyed, the Ghost blog data is preserved if a new container is spun up
+●	The Ghost blog app from its container must persist data into the MySQL database container.
+●	Only HTTP connection is exposed to port 80 on the host from Ghost container.
+●	MySQL database container should not expose any ports to the host.
 
