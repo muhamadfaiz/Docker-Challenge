@@ -1,7 +1,7 @@
 #Setting up Git to sync configuration files
 
 1. Install git
-```shell
+```
 #yum update
 #yum install git
 ```
