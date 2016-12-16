@@ -46,15 +46,52 @@
   # service docker start
   ```
 
-##Install MySQL within Docker
+##Setting up MySQL container within Docker
 
-```
-# docker run --name mysql-ghost -v /tmp/mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="password" -d -p 3306:3306 mariadb
-```
-1. Above command will do;
+1. Below command will do;
+
+  ```
+  # docker run --name mysql-ghost -v /tmp/mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="password" -d mariadb 
+  ```
+  
   1. Download `mariadb` Docker image if it is not available locally
   2. Name our new container with `mysql-ghost`
   3. Mount `/var/lib/mysql` to `/tmp/mysql` so that content will be accessible outside of the container
   4. Setting up root password to `password`
   5. Run in detached mode.
-  6. Map MySQL container port 3306 to local port 3306.
+
+2. Login to MySQL
+  ```
+  # docker exec -i -t mysql-ghost /bin/bash
+  # mysql -uroot -ppassword
+  ```
+  
+3. Create the database, `ghost_blog` and grant all rights to the `ghost_user`.
+  ```
+  MariaDB [(none)]> create database ghost_blog;
+  Query OK, 1 row affected (0.00 sec)
+
+  MariaDB [(none)]> create user 'ghost_user'@'%' identified by 'ghost_password';
+  Query OK, 0 rows affected (0.00 sec)
+
+  MariaDB [(none)]> grant all privileges on *.* to 'ghost_user'@'%';
+  Query OK, 0 rows affected (0.00 sec)
+
+  MariaDB [(none)]> flush privileges;
+  Query OK, 0 rows affected (0.00 sec)
+  ```
+  
+##Setting up Ghost container within Docker
+
+1. This is the same as we did above the only difference is now we are linking two containers to each other using the
+`--link` parameter (`mysql-ghost`: "alias"). 
+  ```
+  # docker run --name ghost_blog -p 80:2368 -v /tmp/ghost/:/var/lib/ghost -d --link mysql-ghost:mariadb ghost
+  ```
+
+2. Load `config.js` from Github.
+  ```
+  # mv /tmp/ghost/config.js ~/configs/dockerchallenge169419/ghost/
+  # ln -s ~/configs/dockerchallenge169419/ghost/config.js /tmp/ghost
+  ```
+
