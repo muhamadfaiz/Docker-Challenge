@@ -91,9 +91,13 @@
 
 2. Load `config.js` from Github.
   ```
-  # mv /tmp/ghost/config.js ~/configs/dockerchallenge169419/ghost/
-  # ln -s ~/configs/dockerchallenge169419/ghost/config.js /tmp/ghost
-  
-   dockerchallenge169419/ghost/config.js 
+  # cp ~/configs/dockerchallenge169419/ghost/config.js /tmp/ghost/
+
   ```
+
+3. Restart Ghost container
+  ```
+  # docker restart ghost_blog
+  ```
+
 
