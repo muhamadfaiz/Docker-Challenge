@@ -1,3 +1,6 @@
 #Install git
-yum update
-yum install git
+
+```shell
+#yum update
+#yum install git
+```
