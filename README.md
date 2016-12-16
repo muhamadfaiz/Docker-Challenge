@@ -93,5 +93,7 @@
   ```
   # mv /tmp/ghost/config.js ~/configs/dockerchallenge169419/ghost/
   # ln -s ~/configs/dockerchallenge169419/ghost/config.js /tmp/ghost
+  
+   dockerchallenge169419/ghost/config.js 
   ```
 
