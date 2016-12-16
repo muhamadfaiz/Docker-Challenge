@@ -1,12 +1,11 @@
-#Scenario 1
-##Creation of a Blog
+#Scenario 1 - Creation of a Blog
 
 ##Objective
-●	Demonstrate basic understanding of Docker containers and images
+Demonstrate basic understanding of Docker containers and images
 
 ##Mission
-●	To have a blogging platform running for low traffic blog hosting
-●	As a Blog Owner, I want to have a Ghost blogging platform (https://ghost.org/) running as Docker container with MySQL database backend (instead of default embedded SQLite database)
+  * To have a blogging platform running for low traffic blog hosting
+  * As a Blog Owner, I want to have a Ghost blogging platform (https://ghost.org/) running as Docker container with MySQL database backend (instead of default embedded SQLite database)
 
 ##Installation Procedures
 ###Setting up Git to sync configuration files
