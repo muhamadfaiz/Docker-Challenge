@@ -1,6 +1,6 @@
 #Setting up Git to sync configuration files
 
-1.Install git
+1.Install git #test
 ```
 # yum update -y
 # yum install git -y
