@@ -1,19 +1,22 @@
 #Setting up Git to sync configuration files
 
-1. Install git
+1.Install git
 ```
-#yum update
-#yum install git
+#yum update -y
+#yum install git -y
 ```
-2. Create config directory to store configuration files 
+2.Create config directory to store configuration files 
+
 ```
 #mkdir /root/configs
 ```
-3. Use ~/configs
+
+3.Use ~/configs
 ```
 #cd ~/configs
 #git init
 ```
+
 
 
 
