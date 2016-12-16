@@ -24,7 +24,7 @@
 
 #Install and setting up Docker
 
-1. Add the yum repo
+1.Add the yum repo
 ```
 # tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
@@ -36,12 +36,12 @@ gpgkey=https://yum.dockerproject.org/gpg
 EOF
 ```
 
-2. Install Docker
+2.Install Docker
 ```
 # yum install docker-engine -y
 ```
 
-3. Start Docker
+3.Start Docker
 ```
 # service docker start
 ```
