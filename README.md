@@ -116,8 +116,17 @@ Demonstrate basic understanding of Docker containers and images
 
 ![img](http://i.imgur.com/wEGL6MV.png)
 
-●	If the container is destroyed, the Ghost blog data is preserved if a new container is spun up
-●	The Ghost blog app from its container must persist data into the MySQL database container.
-●	Only HTTP connection is exposed to port 80 on the host from Ghost container.
-●	MySQL database container should not expose any ports to the host.
+There are 2 running containers linked.
+
+*	If the container is destroyed, the Ghost blog data is preserved if a new container is spun up
+
+![img](http://i.imgur.com/ceVfyBy.png)
+
+The Ghost container is stopped but the data still can be retrieved.
+
+*	The Ghost blog app from its container must persist data into the MySQL database container.
+
+
+*	Only HTTP connection is exposed to port 80 on the host from Ghost container.
+*	MySQL database container should not expose any ports to the host.
 
