@@ -116,17 +116,23 @@ Demonstrate basic understanding of Docker containers and images
 
 ![img](http://i.imgur.com/wEGL6MV.png)
 
-There are 2 running containers linked.
+*There are 2 running containers linked.*
 
 *	If the container is destroyed, the Ghost blog data is preserved if a new container is spun up
 
 ![img](http://i.imgur.com/ceVfyBy.png)
 
-The Ghost container is stopped but the data still can be retrieved.
+*The Ghost container is stopped but the data still can be retrieved.*
 
 *	The Ghost blog app from its container must persist data into the MySQL database container.
 
+![img](http://i.imgur.com/8ZYZvG7.png)
+
+*The Ghost's blog entry is stored in MySQL databases
 
 *	Only HTTP connection is exposed to port 80 on the host from Ghost container.
 *	MySQL database container should not expose any ports to the host.
 
+![img](http://i.imgur.com/wEGL6MV.png)
+
+*Only Ghost container can be accessible via port 80 but MySQL cannot be accessible from any port.
