@@ -45,3 +45,17 @@ EOF
 ```
 # service docker start
 ```
+
+##Install MySQL within Docker
+
+```
+# docker run --name mysql-ghost -v /tmp/mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="password" -d -p 3306:3306 mariadb
+```
+1.Above command will do;
+
+..1.Download `mariadb` Docker image if it is not available locally
+..2.Name our new container with `mysql-ghost`
+..3.Mount `/var/lib/mysql` to `/tmp/mysql` so that content will be accessible outside of the container
+..4.Setting up root password to `password`
+..5.Run in detached mode.
+..6.Map MySQL container port 3306 to local port 3306.
