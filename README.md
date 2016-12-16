@@ -1,4 +1,15 @@
-#Setting up Git to sync configuration files
+#Scenario 1
+##Creation of a Blog
+
+##Objective
+●	Demonstrate basic understanding of Docker containers and images
+
+##Mission
+●	To have a blogging platform running for low traffic blog hosting
+●	As a Blog Owner, I want to have a Ghost blogging platform (https://ghost.org/) running as Docker container with MySQL database backend (instead of default embedded SQLite database)
+
+##Installation Procedures
+###Setting up Git to sync configuration files
 
 1. Install git
   ```
@@ -22,7 +33,7 @@
   # git clone https://github.com/muhamadfaiz/dockerchallenge169419.git
   ```
 
-#Install and setting up Docker
+###Install and setting up Docker
 
 1. Add the yum repo
   ```
@@ -46,7 +57,7 @@
   # service docker start
   ```
 
-##Setting up MySQL container within Docker
+####Setting up MySQL container within Docker
 
 1. Below command will do;
 
@@ -81,7 +92,7 @@
   Query OK, 0 rows affected (0.00 sec)
   ```
   
-##Setting up Ghost container within Docker
+####Setting up Ghost container within Docker
 
 1. This is the same as we did above the only difference is now we are linking two containers to each other using the
 `--link` parameter (`mysql-ghost`: "alias"). 
@@ -92,7 +103,6 @@
 2. Load `config.js` from Github.
   ```
   # cp ~/configs/dockerchallenge169419/ghost/config.js /tmp/ghost/
-
   ```
 
 3. Restart Ghost container
